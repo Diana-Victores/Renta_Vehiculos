@@ -27,10 +27,6 @@ create table ManteClientes(
     CogigoDireccion varchar (20)
     )ENGINE=InnoDB DEFAULT CHARSET=latin1;
     
-    use Proyecto_renta;
-	select * from ManteClientes;
-    
-    
     /*Mantenimiento masrcas y tipo*/
    Create table Mantemarcas(
 	ID  int (20) auto_increment primary key,
@@ -52,11 +48,21 @@ create table ManteClientes(
     CodigoFiltroGasolina varchar (20),
     CodigoBujias varchar (20),
     CodigoLimpiezaAceleracion varchar (20),
-    CodigoLimpiezaPCV varchar (20),
     CodigoInspeccionSeguridad varchar (20),
+	CodigoLimpiezaPCV varchar (20),
     CodigoDiagnosticoScanner varchar (20),
     CodigoRevisiondefrenos varchar (20)    
     )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+    
+    /*MANTENIMIENTO ESTADO DE VEHICULO DISPONIBLE RENTADO NO DISPONIBLE*/
+	Create table ManteEstadoVehiculoDRN(
+	ID  int (20) auto_increment primary key,
+	Codigo varchar (20),
+    CodigoMarca varchar (20),
+	CodigoTipo varchar (20),
+    CodigoEstadoVehiculo varchar (20)
+    )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+    
     
     /*DETALLE RENTA*/
     Create table DETALLE_RENTA(
@@ -77,19 +83,64 @@ create table ManteClientes(
  WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON PRIMARY
 ) ON PRIMARY*/
 
-	use Proyecto_renta;
-	select * from RENTA;
     
     /*RENTA*/
     CREATE TABLE RENTA(
     ID  int (20) auto_increment primary key,
 	Codigo varchar (20),
-	ID_RENTA int NOT NULL,
+	ID_RENTA int(10) NOT NULL,
 	SERIE varchar(10) NOT NULL,
-	ID_CLIENTE int NOT NULL,
-	ID_USUARIO int NULL,
-	ID_TIPO_PAGO int NULL,
+	ID_CLIENTE int (10) NOT NULL,
+	ID_USUARIO int(10) NULL,
+	ID_TIPO_PAGO int(10) NULL,
 	FECHA_PRESTAMO datetime NULL,
 	FECHA_DEVOLUCION datetime NULL,
 	TOTAL decimal(10, 2) NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+    
+    /*TIPO_VEHICULO*/
+    CREATE TABLE TIPO_VEHICULO(
+    ID  int (20) auto_increment primary key,
+	Codigo varchar (20),
+	ID_TIPO_VEHICULO int NOT NULL,
+	DESCRIPCION nvarchar(50) NULL
+     ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*PRIMARY KEY CLUSTERED 
+
+	ID_TIPO_VEHICULO ASC
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+ ON [PRIMARY]*/
+ 
+ 
+ /*VEHICULO*/
+ CREATE TABLE VEHICULO(
+	ID  int (20) auto_increment primary key,
+	Codigo varchar (20),
+	ID_VEHICULO int (10) NOT NULL,
+	ID_MARCA int (10) NULL,
+	ID_TIPO_VEHICULO int (10) NULL,
+	ID_VEHICULO_ESTADO int (10) NULL,
+	MODELO varchar(50) NULL
+     ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/* CONSTRAINT [PK_VEHICULO] PRIMARY KEY CLUSTERED 
+(
+	[ID_VEHICULO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]*/
+
+CREATE TABLE VEHICULO_ESTADO(
+	ID  int (20) auto_increment primary key,
+	Codigo varchar (20),
+	ID_VEHICULO_ESTADO int (20) NOT NULL,
+	DESCRIPCION nvarchar (50) NULL
+       ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*PRIMARY KEY CLUSTERED 
+(
+	[ID_VEHICULO_ESTADO] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]*/
+
+
+
+    use Proyecto_renta;
+	select * from ManteClientes;

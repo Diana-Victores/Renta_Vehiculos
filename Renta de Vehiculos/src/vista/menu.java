@@ -13,6 +13,7 @@ import RENTA_VEHICULOS.Detalle_Renta;
 import RENTA_VEHICULOS.Tipo_vehiculo;
 import RENTA_VEHICULOS.VEHICULO_ESTADO;
 import RENTA_VEHICULOS.Vehiculos;
+import Recibo.recibo_renta_vehiculo;
 import modelo.Usuarios;
 
 /**
@@ -36,6 +37,8 @@ public class menu extends javax.swing.JFrame {
             menuRENTAS.setVisible(true);
             SALIR.setVisible(true);
             VALIDACIONES.setVisible(true);
+            RECIBO.setVisible(true);
+            
         } else {
            menuRENTAS.setVisible(true);
            menuMantenimientos.setVisible(false);
@@ -61,6 +64,8 @@ public class menu extends javax.swing.JFrame {
         estadodelvehiculo = new javax.swing.JCheckBoxMenuItem();
         VALIDACIONES = new javax.swing.JMenu();
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        RECIBO = new javax.swing.JMenu();
+        jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
         SALIR = new javax.swing.JMenu();
         Salirdelsistema = new javax.swing.JCheckBoxMenuItem();
 
@@ -165,6 +170,19 @@ public class menu extends javax.swing.JFrame {
 
         jMenuBar1.add(VALIDACIONES);
 
+        RECIBO.setText("RECIBO");
+
+        jCheckBoxMenuItem2.setSelected(true);
+        jCheckBoxMenuItem2.setText("Recibo");
+        jCheckBoxMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItem2ActionPerformed(evt);
+            }
+        });
+        RECIBO.add(jCheckBoxMenuItem2);
+
+        jMenuBar1.add(RECIBO);
+
         SALIR.setText("SALIR");
 
         Salirdelsistema.setSelected(true);
@@ -255,6 +273,14 @@ public class menu extends javax.swing.JFrame {
          this.setVisible(false);
     }//GEN-LAST:event_estadodelvehiculoActionPerformed
 
+    private void jCheckBoxMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        
+         recibo_renta_vehiculo frm = new recibo_renta_vehiculo();
+         frm.setVisible(true);        
+         this.setVisible(false);        
+    }//GEN-LAST:event_jCheckBoxMenuItem2ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -290,12 +316,14 @@ public class menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem MantenimientoMarcaytipo;
     private javax.swing.JMenuItem Mantenimientocliente;
+    private javax.swing.JMenu RECIBO;
     private javax.swing.JMenu SALIR;
     private javax.swing.JCheckBoxMenuItem Salirdelsistema;
     private javax.swing.JMenu VALIDACIONES;
     private javax.swing.JMenuItem detallederenta;
     private javax.swing.JCheckBoxMenuItem estadodelvehiculo;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JCheckBoxMenuItem manteestadovehiculo;
