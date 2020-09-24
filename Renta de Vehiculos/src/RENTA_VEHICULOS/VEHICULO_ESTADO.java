@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Mantenimientos;
+package RENTA_VEHICULOS;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -16,17 +16,20 @@ import vista.menu;
  *
  * @author Diana
  */
-public class MantenimientoMarcasyTipo extends javax.swing.JFrame {
+public class VEHICULO_ESTADO extends javax.swing.JFrame {
 
     /**
-     * Creates new form MantenimientoMarcasyTipo
+     * Creates new form VEHICULO_ESTADO
      */
-    public MantenimientoMarcasyTipo() {
+    public VEHICULO_ESTADO() {
         initComponents();
-        this.tabladedatos.setModel(model);
+         this.tabladedatos.setModel(model);
         this.model.addColumn("Codigo");
-        this.model.addColumn("Marca");
-        this.model.addColumn("Tipo");
+        this.model.addColumn("ID_VEHICULO_ESTADO");
+        this.model.addColumn("DESCRIPCION");
+      
+       
+    
         
         this.tabladedatos.setModel(model);
     }
@@ -42,107 +45,59 @@ public class MantenimientoMarcasyTipo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         txtid = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
         txtcodigo = new javax.swing.JTextField();
-        labels_statuss = new javax.swing.JLabel();
-        txtmarca = new javax.swing.JTextField();
-        txttipo = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        txtidvehiculoestado = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtdescripcion = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabladedatos = new javax.swing.JTable();
+        Label_status = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel1.setText("ID");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, -1, -1));
+
         jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("MARCAS DE VEHICULO");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 151, -1, -1));
+        jLabel2.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel2.setText("Codigo");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("TIPO DE VEHICULO");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 195, -1, -1));
+        jLabel3.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel3.setText("ID_VEHICULO_ESTADO");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, -1));
+        getContentPane().add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 130, -1));
+
+        txtcodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcodigoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 130, -1));
+        getContentPane().add(txtidvehiculoestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 130, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("ID");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 75, -1, -1));
-        getContentPane().add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 72, -1));
-
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("CODIGO");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 113, -1, -1));
-        getContentPane().add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 72, -1));
-        getContentPane().add(labels_statuss, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 140, 30));
-        getContentPane().add(txtmarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 150, -1));
-        getContentPane().add(txttipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 150, -1));
-
-        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel6.setText("MANTENIMIENTO MARCAS Y TIPO");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
-
-        jButton5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton5.setText("SALIR");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 240, 110, -1));
-
-        jButton6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton6.setText("Buscar");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 200, 113, -1));
-
-        jButton4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton4.setText("Eliminar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, 113, -1));
-
-        jButton3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton3.setText("Modificar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 120, 109, -1));
-
-        jButton2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton2.setText("Nuevo");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 80, 107, -1));
+        jLabel4.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel4.setText("DESCRIPCION");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, -1));
+        getContentPane().add(txtdescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 130, -1));
 
         jButton1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jButton1.setText("Registrar");
@@ -151,7 +106,57 @@ public class MantenimientoMarcasyTipo extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, 111, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, 150, -1));
+
+        jButton2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButton2.setText("Nuevo");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, 150, -1));
+
+        jButton3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButton3.setText("Modificar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 150, 20));
+
+        jButton4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButton4.setText("Eliminar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 170, 150, -1));
+
+        jButton6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButton6.setText("Buscar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 210, 150, -1));
+
+        jButton5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButton5.setText("SALIR");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 250, 150, -1));
+
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel5.setText("VEHICULO_ESTADO");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, -1, -1));
 
         tabladedatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -166,7 +171,8 @@ public class MantenimientoMarcasyTipo extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabladedatos);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 570, 125));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 680, 120));
+        getContentPane().add(Label_status, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 110, 30));
 
         jButton7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jButton7.setText("REGRESAR");
@@ -175,9 +181,10 @@ public class MantenimientoMarcasyTipo extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 450, 120, -1));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 150, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 500));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 750, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -189,36 +196,36 @@ public class MantenimientoMarcasyTipo extends javax.swing.JFrame {
             Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto_renta","root","");
 
             Connection cn= DriverManager.getConnection("jdbc:mysql://localhost/Proyecto_renta","root","");
-            java.sql.PreparedStatement pst = cn.prepareStatement("insert into Mantemarcas values(?,?,?,?)");
+            java.sql.PreparedStatement pst = cn.prepareStatement("insert into VEHICULO_ESTADO values(?,?,?,?)");
 
             pst.setString(1, "0");
             pst.setString(2, txtcodigo.getText().trim());
-            pst.setString(3, txtmarca.getText().trim());
-            pst.setString(4, txttipo.getText().trim());
+            pst.setString(3, txtidvehiculoestado.getText().trim());
+            pst.setString(4, txtdescripcion.getText().trim());
             
 
             pst.executeUpdate();
 
             txtcodigo.setText("");
-            txtmarca.setText("");
-            txttipo.setText("");
-            
-            labels_statuss.setText("Registro exitoso");
+            txtidvehiculoestado.setText("");
+            txtdescripcion.setText("");
+           
+            Label_status.setText("Registro exitoso");
 
         } catch (Exception e) {
 
         }
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------//
-        // CODIGO R_EMPLEADOS
+        // CODIGO VEHICULO ESTADO
 
         this.model.addRow(new Object [] {
-            this.txtcodigo.getText(),this.txtmarca.getText(),this.txttipo.getText()
+            this.txtcodigo.getText(),this.txtidvehiculoestado.getText(), this.txtdescripcion.getText()
         });
         this.txtcodigo.setText("");
-        this.txtmarca.setText("");
-        this.txttipo.setText("");
-        
+        this.txtidvehiculoestado.setText("");
+        this.txtdescripcion.setText("");
+  
         txtcodigo.grabFocus();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -229,31 +236,31 @@ public class MantenimientoMarcasyTipo extends javax.swing.JFrame {
             Connection conectar = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto_renta","root","");
 
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto_renta", "root", "");//conecta a MYSQL
-            java.sql.PreparedStatement pst = cn.prepareStatement("insert into Mantemarcas values(?,?,?,?)");
+            java.sql.PreparedStatement pst = cn.prepareStatement("insert into VEHICULO_ESTADO values(?,?,?,?)");
 
             pst.setString(1, "0");
             pst.setString(2, txtcodigo.getText().trim());
-            pst.setString(3, txtmarca.getText().trim());
-            pst.setString(4, txttipo.getText().trim());
+            pst.setString(3, txtidvehiculoestado.getText().trim());
+            pst.setString(4, txtdescripcion.getText().trim());
             
-
             pst.executeUpdate();
 
-           txtcodigo.setText("");
-           txtmarca.setText("");
-           txttipo.setText("");
+            txtcodigo.setText("");
+            txtidvehiculoestado.setText("");
+            txtdescripcion.setText("");
            
-            labels_statuss.setText("Registro exitoso.");
+
+            Label_status.setText("Registro exitoso.");
 
         }catch (Exception e){
             e.printStackTrace();
         }
         //---------------------------------------------------------------------------------------------------//
-        //CODIGO R_EMPLEADOS
+        //CODIGO VEHICULO ESTADO
         this.txtcodigo.setText("");
-        this.txtmarca.setText("");;
-        this.txttipo.setText("");
-        
+        this.txtidvehiculoestado.setText("");
+        this.txtdescripcion.setText("");
+
         txtcodigo.grabFocus();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -264,28 +271,27 @@ public class MantenimientoMarcasyTipo extends javax.swing.JFrame {
             String ID = txtid.getText().trim();
 
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto_renta", "root", "");
-            java.sql.PreparedStatement pst = cn.prepareStatement("update Mantemarcas set Codigo=?,  CodigoMarca=?,  CodigoTipo=?  where ID = " + ID);
+            java.sql.PreparedStatement pst = cn.prepareStatement("update VEHICULO_ESTADO set Codigo=?,  ID_VEHICULO_ESTADO=?,  DESCRIPCION=?  where ID = " + ID);
 
             pst.setString(1, txtcodigo.getText().trim());
-            pst.setString(2, txtmarca.getText().trim());
-            pst.setString(3, txttipo.getText().trim());
-            
-
+            pst.setString(2, txtidvehiculoestado.getText().trim());
+            pst.setString(3, txtdescripcion.getText().trim());
             pst.executeUpdate();
 
-            labels_statuss.setText("Modificación exitosa.");
+            Label_status.setText("Modificación exitosa.");
 
         } catch (Exception e) {
         }
 
         //-----------------------------------------------------------------------------------------------------//
-        // CODIGO R_EMPLEADOS
+        // CODIGO VEHICULO ESTADO
 
         String [] datos=new String [3];
         datos[0]=txtcodigo.getText();
-        datos[1]=txtmarca.getText();
-        datos[2]=txttipo.getText();
+        datos[1]=txtidvehiculoestado.getText();
+        datos[2]=txtdescripcion.getText();
         
+
         int i = 0;
 
         for (int a  = 0; a < tabladedatos.getColumnCount(); a++) {
@@ -295,25 +301,26 @@ public class MantenimientoMarcasyTipo extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        //eliminar
+
         try {
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto_renta", "root", "");
-            java.sql.PreparedStatement pst = cn.prepareStatement("delete from Mantemarcas where ID = ?");
+            java.sql.PreparedStatement pst = cn.prepareStatement("delete from VEHICULO_ESTADO where ID = ?");
 
             pst.setString(1, txtid.getText().trim());
 
             pst.executeUpdate();
-            txtcodigo.setText("");
-            txtmarca.setText("");
-            txttipo.setText("");
 
-            labels_statuss.setText("Registro eliminado.");
+            txtcodigo.setText("");
+            txtidvehiculoestado.setText("");
+            txtdescripcion.setText("");        
+
+            Label_status.setText("Registro eliminado.");
 
         } catch (Exception e) {
         }
 
         //---------------------------------------------------------------------------------------------------------------//
-        //CODIGO R_EMPLEADOS
+        //CODIGO VEHICULO ESTADO
         DefaultTableModel modelo = (DefaultTableModel) tabladedatos.getModel();
         int a=tabladedatos.getSelectedRow();
         if (a<0){
@@ -331,8 +338,8 @@ public class MantenimientoMarcasyTipo extends javax.swing.JFrame {
         //BOTON BUSCAR
         try{
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto_renta", "root", "");
-            java.sql.PreparedStatement pst = cn.prepareStatement("select * from Mantemarcas where ID = ?");
-            
+            java.sql.PreparedStatement pst = cn.prepareStatement("select * from VEHICULO_ESTADO where ID = ?");
+
             pst.setString(1, txtid.getText().trim());
 
             ResultSet rs = pst.executeQuery();
@@ -340,8 +347,8 @@ public class MantenimientoMarcasyTipo extends javax.swing.JFrame {
             if(rs.next()){
 
                 txtcodigo.setText(rs.getString("Codigo"));
-                txtmarca.setText(rs.getString("CodigoMarca"));
-                txttipo.setText(rs.getString("CodigoTipo"));
+                txtidvehiculoestado.setText(rs.getString("ID_VEHICULO_ESTADO"));
+                txtdescripcion.setText(rs.getString("DESCRIPCION"));
                 
 
             } else {
@@ -351,7 +358,6 @@ public class MantenimientoMarcasyTipo extends javax.swing.JFrame {
         }catch (Exception e){
 
         }
-       
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -359,16 +365,23 @@ public class MantenimientoMarcasyTipo extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void txtcodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcodigoActionPerformed
+
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         menu GN= new menu();
         GN.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton7ActionPerformed
-    int filas;
+
     /**
      * @param args the command line arguments
      */
+    
+     int filas;
+     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -383,25 +396,26 @@ public class MantenimientoMarcasyTipo extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MantenimientoMarcasyTipo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VEHICULO_ESTADO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MantenimientoMarcasyTipo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VEHICULO_ESTADO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MantenimientoMarcasyTipo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VEHICULO_ESTADO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MantenimientoMarcasyTipo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VEHICULO_ESTADO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MantenimientoMarcasyTipo().setVisible(true);
+                new VEHICULO_ESTADO().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Label_status;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -409,18 +423,17 @@ public class MantenimientoMarcasyTipo extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labels_statuss;
     private javax.swing.JTable tabladedatos;
     private javax.swing.JTextField txtcodigo;
+    private javax.swing.JTextField txtdescripcion;
     private javax.swing.JTextField txtid;
-    private javax.swing.JTextField txtmarca;
-    private javax.swing.JTextField txttipo;
+    private javax.swing.JTextField txtidvehiculoestado;
     // End of variables declaration//GEN-END:variables
 }
