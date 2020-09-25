@@ -214,7 +214,7 @@ public class Tipo_vehiculo extends javax.swing.JFrame {
         }
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------//
-        // CODIGO R_EMPLEADOS
+        // CODIGO 
 
         this.model.addRow(new Object [] {
        this.txtcodigo.getText(),this.txtidtipovehiculo.getText(), this.txtdescripcion.getText()
@@ -283,7 +283,7 @@ public class Tipo_vehiculo extends javax.swing.JFrame {
         }
 
         //-----------------------------------------------------------------------------------------------------//
-        // CODIGO R_EMPLEADOS
+        // CODIGO 
 
         String [] datos=new String [3];
         datos[0]=txtcodigo.getText();
@@ -318,7 +318,7 @@ public class Tipo_vehiculo extends javax.swing.JFrame {
         }
 
         //---------------------------------------------------------------------------------------------------------------//
-        //CODIGO R_EMPLEADOS
+        //CODIGO
         DefaultTableModel modelo = (DefaultTableModel) tabladedatos.getModel();
         int a=tabladedatos.getSelectedRow();
         if (a<0){

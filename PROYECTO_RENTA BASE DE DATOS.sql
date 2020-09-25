@@ -143,4 +143,4 @@ CREATE TABLE VEHICULO_ESTADO(
 
 
     use Proyecto_renta;
-	select * from ManteClientes;
+	select * from usuarios;

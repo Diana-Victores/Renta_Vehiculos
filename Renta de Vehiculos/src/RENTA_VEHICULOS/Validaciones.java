@@ -75,7 +75,7 @@ public class Validaciones extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Solo los vehículos disponibles pueden ser rentados\n" +
+        JOptionPane.showMessageDialog(null, "INSTRUCCIONES DE VALIDACION: Solo los vehículos disponibles pueden ser rentados\n" +
 "- Un cliente puede rentar más de un vehículo siempre y cuando la fecha de devolución sea la misma para los vehículos rentados.\n" +
 "- Una vez rentado el vehículo (s), éste (os) pasan a estado rentado.\n" +
 "- Validar que ningún cliente pueda rentar el vehículo que ya fue rentado\n" +

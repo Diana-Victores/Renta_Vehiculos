@@ -12,6 +12,7 @@ import Mantenimientos.MatenimientoClientes;
 import RENTA_VEHICULOS.Detalle_Renta;
 import RENTA_VEHICULOS.Tipo_vehiculo;
 import RENTA_VEHICULOS.VEHICULO_ESTADO;
+import RENTA_VEHICULOS.Validaciones;
 import RENTA_VEHICULOS.Vehiculos;
 import Recibo.recibo_renta_vehiculo;
 import modelo.Usuarios;
@@ -40,8 +41,8 @@ public class menu extends javax.swing.JFrame {
             RECIBO.setVisible(true);
             
         } else {
-           menuRENTAS.setVisible(true);
-           menuMantenimientos.setVisible(false);
+           RECIBO.setVisible(true);
+           SALIR.setVisible(false);
         }
 
     }
@@ -166,6 +167,11 @@ public class menu extends javax.swing.JFrame {
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("Validaciones");
+        jCheckBoxMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItem1ActionPerformed(evt);
+            }
+        });
         VALIDACIONES.add(jCheckBoxMenuItem1);
 
         jMenuBar1.add(VALIDACIONES);
@@ -280,6 +286,13 @@ public class menu extends javax.swing.JFrame {
          frm.setVisible(true);        
          this.setVisible(false);        
     }//GEN-LAST:event_jCheckBoxMenuItem2ActionPerformed
+
+    private void jCheckBoxMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        Validaciones frm = new Validaciones();
+         frm.setVisible(true);        
+         this.setVisible(false);
+    }//GEN-LAST:event_jCheckBoxMenuItem1ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
